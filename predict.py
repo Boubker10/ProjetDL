@@ -43,15 +43,15 @@ def predict_image(image):
 
     return class_name, confidence
 
-st.title("Classification d'Images de Légumes")
-st.write("Téléchargez une image de légume pour recevoir une prédiction du modèle.")
+st.title("Vegetable Image Classification")
+st.write("Upload a vegetable image to receive a model prediction.")
 
-uploaded_file = st.file_uploader("Choisissez une image...", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file).convert('RGB')
-    st.image(image, caption='Image téléchargée.', use_column_width=True)
-    st.write("Classification en cours...")
+    st.image(image, caption='Image uploaded.', use_column_width=True)
+    st.write("Classification in progress...")
     class_name, confidence = predict_image(image)
-    st.write(f"**Classe prédite :** {class_name}")
+    st.write(f"**Predicted Class :** {class_name}")
     st.write(f"**Confiance :** {confidence:.2f}")
