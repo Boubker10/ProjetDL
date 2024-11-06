@@ -44,6 +44,7 @@ def predict_image(image):
     return class_name, confidence
 
 st.title("Vegetable Image Classification")
+st.write(" By Boubker & Nathan ")
 st.write("Upload a vegetable image to receive a model prediction.")
 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
